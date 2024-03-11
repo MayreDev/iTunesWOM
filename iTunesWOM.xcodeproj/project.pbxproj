@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		C6863CBE2B9F7C3F009AFEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CBD2B9F7C3F009AFEBB /* AppDelegate.swift */; };
 		C6863CC02B9F7C3F009AFEBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CBF2B9F7C3F009AFEBB /* SceneDelegate.swift */; };
-		C6863CC22B9F7C3F009AFEBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CC12B9F7C3F009AFEBB /* ViewController.swift */; };
+		C6863CC22B9F7C3F009AFEBB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CC12B9F7C3F009AFEBB /* HomeViewController.swift */; };
 		C6863CC52B9F7C3F009AFEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6863CC32B9F7C3F009AFEBB /* Main.storyboard */; };
 		C6863CC72B9F7C41009AFEBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6863CC62B9F7C41009AFEBB /* Assets.xcassets */; };
 		C6863CCA2B9F7C41009AFEBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6863CC82B9F7C41009AFEBB /* LaunchScreen.storyboard */; };
+		C6863CD42B9F8057009AFEBB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CD32B9F8057009AFEBB /* SplashViewController.swift */; };
+		C6863CD62B9F806F009AFEBB /* SplashViewControllerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CD52B9F806F009AFEBB /* SplashViewControllerConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C6863CBA2B9F7C3F009AFEBB /* iTunesWOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesWOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6863CBD2B9F7C3F009AFEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6863CBF2B9F7C3F009AFEBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C6863CC12B9F7C3F009AFEBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C6863CC12B9F7C3F009AFEBB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C6863CC42B9F7C3F009AFEBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6863CC62B9F7C41009AFEBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6863CC92B9F7C41009AFEBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6863CCB2B9F7C41009AFEBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6863CD32B9F8057009AFEBB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		C6863CD52B9F806F009AFEBB /* SplashViewControllerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,89 @@
 		C6863CBC2B9F7C3F009AFEBB /* iTunesWOM */ = {
 			isa = PBXGroup;
 			children = (
+				C6863CD12B9F7F83009AFEBB /* Source */,
 				C6863CBD2B9F7C3F009AFEBB /* AppDelegate.swift */,
 				C6863CBF2B9F7C3F009AFEBB /* SceneDelegate.swift */,
-				C6863CC12B9F7C3F009AFEBB /* ViewController.swift */,
 				C6863CC32B9F7C3F009AFEBB /* Main.storyboard */,
 				C6863CC62B9F7C41009AFEBB /* Assets.xcassets */,
 				C6863CC82B9F7C41009AFEBB /* LaunchScreen.storyboard */,
 				C6863CCB2B9F7C41009AFEBB /* Info.plist */,
 			);
 			path = iTunesWOM;
+			sourceTree = "<group>";
+		};
+		C6863CD12B9F7F83009AFEBB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C6863CD72B9F8AC2009AFEBB /* HomeViewController */,
+				C6863CD22B9F7FEA009AFEBB /* Splash */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		C6863CD22B9F7FEA009AFEBB /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				C6863CD92B9F8B69009AFEBB /* View */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		C6863CD72B9F8AC2009AFEBB /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C6863CDD2B9F8BE7009AFEBB /* Data */,
+				C6863CDA2B9F8BA8009AFEBB /* Domain */,
+				C6863CD82B9F8B5A009AFEBB /* View */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		C6863CD82B9F8B5A009AFEBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6863CC12B9F7C3F009AFEBB /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C6863CD92B9F8B69009AFEBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6863CD32B9F8057009AFEBB /* SplashViewController.swift */,
+				C6863CD52B9F806F009AFEBB /* SplashViewControllerConstants.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C6863CDA2B9F8BA8009AFEBB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C6863CDC2B9F8BC5009AFEBB /* UseCase */,
+				C6863CDB2B9F8BBA009AFEBB /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C6863CDB2B9F8BBA009AFEBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C6863CDC2B9F8BC5009AFEBB /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		C6863CDD2B9F8BE7009AFEBB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6863CC22B9F7C3F009AFEBB /* ViewController.swift in Sources */,
+				C6863CD62B9F806F009AFEBB /* SplashViewControllerConstants.swift in Sources */,
+				C6863CC22B9F7C3F009AFEBB /* HomeViewController.swift in Sources */,
 				C6863CBE2B9F7C3F009AFEBB /* AppDelegate.swift in Sources */,
 				C6863CC02B9F7C3F009AFEBB /* SceneDelegate.swift in Sources */,
+				C6863CD42B9F8057009AFEBB /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
