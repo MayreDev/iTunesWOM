@@ -23,5 +23,51 @@ class Constants {
     
     enum HomeView {
         static let navigationTitle = "iTunes"
+        static let segmentedTexts = ["Todos", "Favoritos"]
+    }
+    
+    enum TunesCell {
+        static let nameCell = "TunesCell"
+        static let heart = "heart"
+        static let heartFill = "heart.fill"
+        static let borderWidth: CGFloat = 1.0
+        static let albumImageViewWidth: CGFloat = 60.0
+        static let albumImageViewHeight: CGFloat = 60.0
+    }
+    
+    enum Numbers {
+        static let teen = 10
+        static let two = 2
+    }
+    
+    enum Size {
+        static let sixteen = 16
+        static let fourteen = 14
+    }
+    
+    enum Constraints {
+        static let containerViewTop: CGFloat = 10.0
+        static let containerViewLeading: CGFloat = 10.0
+        static let containerViewTrailing: CGFloat = -10.0
+        static let containerViewBottom: CGFloat = -10.0
+        
+        static let trackNameLabelTop: CGFloat = 10.0
+        static let trackNameLabelLeading: CGFloat = 10.0
+        static let trackNameLabelTrailing: CGFloat = -10.0
+        
+        static let artistNameLabelTop: CGFloat = 5.0
+        static let artistNameLabelLeading: CGFloat = 10.0
+        static let artistNameLabelTrailing: CGFloat = -10.0
+        
+        static let albumImageViewTop: CGFloat = 10.0
+        static let albumImageViewLeading: CGFloat = 10.0
+        static let albumImageBottom: CGFloat = -10.0
+        
+        static let favoriteButtonTop: CGFloat = 10.0
+        static let favoriteButtonTrailing: CGFloat = -10.0
+    }
+    
+    enum UserDefault {
+        static let favoriteId = "favoriteTrackIDs"
     }
 }

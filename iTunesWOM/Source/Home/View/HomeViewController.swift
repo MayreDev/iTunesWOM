@@ -38,16 +38,16 @@ class HomeViewController: UIViewController {
     }
     
     private func configureSegmentedControl() {
-        segmentedControl = UISegmentedControl(items: ["Todos", "Favoritos"])
+        segmentedControl = UISegmentedControl(items: Constants.HomeView.segmentedTexts)
         segmentedControl.selectedSegmentTintColor = .clear
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.subviews.forEach { subview in
             subview.backgroundColor = .systemGray6
         }
-        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.selectedSegmentIndex = .zero
         segmentedControl.addTarget(self, action: #selector(hideTableAndShowCollection), for: .valueChanged)
         view.addSubview(segmentedControl)
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)], for: .selected)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(Constants.Size.fourteen), weight: .bold)], for: .selected)
     }
     
     @objc func hideTableAndShowCollection() {
@@ -57,14 +57,14 @@ class HomeViewController: UIViewController {
     
     func updatefavorites(){
         guard let list = ListTunes?.results else { return }
-        let favorites = UserDefaults.standard.array(forKey: "favoriteTrackIDs") as? [Int]
+        let favorites = UserDefaults.standard.array(forKey: Constants.UserDefault.favoriteId) as? [Int]
         let favoriteTrackIDs = list.filter{ favorites?.contains($0.trackID) == true}
         favoriteTunes.removeAll()
         favoriteTunes = favoriteTrackIDs
     }
     private func configureTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(TunesCell.self, forCellReuseIdentifier: "TunesCell")
+        tableView.register(TunesCell.self, forCellReuseIdentifier: Constants.TunesCell.nameCell)
         tableView.dataSource = viewDataSource
         tableView.delegate = viewDelegate
         tableView.separatorStyle = .none
@@ -78,7 +78,7 @@ class HomeViewController: UIViewController {
             segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            tableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 10),
+            tableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: CGFloat(Constants.Numbers.teen)),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -117,9 +117,9 @@ extension HomeViewController: HomeViewProtocol {
         }
         
         let favoriteTrackIDs = favoriteTunes.map { $0.trackID }
-        UserDefaults.standard.set(favoriteTrackIDs, forKey: "favoriteTrackIDs")
+        UserDefaults.standard.set(favoriteTrackIDs, forKey:  Constants.UserDefault.favoriteId)
         tableView.reloadData()
-        if let favoriteTrackIDs = UserDefaults.standard.array(forKey: "favoriteTrackIDs") as? [Int] {
+        if let favoriteTrackIDs = UserDefaults.standard.array(forKey:  Constants.UserDefault.favoriteId) as? [Int] {
             favoriteTunes = ListTunes?.results.filter { favoriteTrackIDs.contains($0.trackID) } ?? []
         }
     }
@@ -141,5 +141,4 @@ extension HomeViewController: HomeViewProtocol {
         let detailView = DetailViewController(song: song)
         navigationController?.pushViewController(detailView, animated: true)
     }
-    
 }

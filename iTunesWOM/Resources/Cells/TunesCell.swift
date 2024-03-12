@@ -20,7 +20,7 @@ class TunesCell: UITableViewCell {
         }
     }
 
-    var trackId: Int = 0
+    var trackId: Int = .zero
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -46,7 +46,7 @@ class TunesCell: UITableViewCell {
     }
 
     private func updateFavoriteButtonImage() {
-        let imageName = isFavorite ? "heart.fill" : "heart"
+        let imageName = isFavorite ? Constants.TunesCell.heartFill : Constants.TunesCell.heart
         favoriteButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
 
@@ -61,22 +61,22 @@ class TunesCell: UITableViewCell {
 
     private func configureContainerView() {
         containerView.backgroundColor = .white
-        containerView.layer.cornerRadius = 10
-        containerView.layer.borderWidth = 1
+        containerView.layer.cornerRadius = CGFloat(Constants.Numbers.teen)
+        containerView.layer.borderWidth = Constants.TunesCell.borderWidth
         containerView.layer.borderColor = UIColor.lightGray.cgColor
         containerView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(containerView)
     }
 
     private func configureTrackNameLabel() {
-        trackNameLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-        trackNameLabel.numberOfLines = 2
+        trackNameLabel.font = UIFont.systemFont(ofSize: CGFloat(Constants.Size.sixteen), weight: .bold)
+        trackNameLabel.numberOfLines = Constants.Numbers.two
         trackNameLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(trackNameLabel)
     }
 
     private func configureArtistNameLabel() {
-        artistNameLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        artistNameLabel.font = UIFont.systemFont(ofSize: CGFloat(Constants.Size.fourteen), weight: .regular)
         artistNameLabel.textColor = .gray
         artistNameLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(artistNameLabel)
@@ -90,7 +90,7 @@ class TunesCell: UITableViewCell {
     }
 
     private func configureFavoriteButton() {
-        favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        favoriteButton.setImage(UIImage(systemName: Constants.TunesCell.heart), for: .normal)
         favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
         favoriteButton.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(favoriteButton)
@@ -98,27 +98,27 @@ class TunesCell: UITableViewCell {
 
     private func configureLayout() {
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.Constraints.containerViewTop),
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.Constraints.containerViewLeading),
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Constants.Constraints.containerViewTrailing),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Constants.Constraints.containerViewBottom),
 
-            trackNameLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
-            trackNameLabel.leadingAnchor.constraint(equalTo: albumImageView.trailingAnchor, constant: 10),
-            trackNameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
+            trackNameLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constants.Constraints.trackNameLabelTop),
+            trackNameLabel.leadingAnchor.constraint(equalTo: albumImageView.trailingAnchor, constant: Constants.Constraints.trackNameLabelLeading),
+            trackNameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: Constants.Constraints.trackNameLabelTrailing),
 
-            artistNameLabel.topAnchor.constraint(equalTo: trackNameLabel.bottomAnchor, constant: 5),
-            artistNameLabel.leadingAnchor.constraint(equalTo: albumImageView.trailingAnchor, constant: 10),
-            artistNameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
+            artistNameLabel.topAnchor.constraint(equalTo: trackNameLabel.bottomAnchor, constant: Constants.Constraints.artistNameLabelTop),
+            artistNameLabel.leadingAnchor.constraint(equalTo: albumImageView.trailingAnchor, constant: Constants.Constraints.artistNameLabelLeading),
+            artistNameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: Constants.Constraints.artistNameLabelTrailing),
 
-            albumImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
-            albumImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
-            albumImageView.widthAnchor.constraint(equalToConstant: 60),
-            albumImageView.heightAnchor.constraint(equalToConstant: 60),
-            albumImageView.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor, constant: -10),
+            albumImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constants.Constraints.albumImageViewTop),
+            albumImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Constants.Constraints.albumImageViewLeading),
+            albumImageView.widthAnchor.constraint(equalToConstant: Constants.TunesCell.albumImageViewWidth),
+            albumImageView.heightAnchor.constraint(equalToConstant: Constants.TunesCell.albumImageViewHeight),
+            albumImageView.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor, constant: Constants.Constraints.albumImageBottom),
 
-            favoriteButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
-            favoriteButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10)
+            favoriteButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constants.Constraints.favoriteButtonTop),
+            favoriteButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: Constants.Constraints.favoriteButtonTrailing)
         ])
     }
 

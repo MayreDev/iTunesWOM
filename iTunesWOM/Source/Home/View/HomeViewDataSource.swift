@@ -19,7 +19,7 @@ extension HomeViewDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TunesCell", for: indexPath) as? TunesCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TunesCell.nameCell, for: indexPath) as? TunesCell else {
             return UITableViewCell()
         }
         
