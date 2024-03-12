@@ -21,7 +21,7 @@ class SplashViewController: UIViewController {
     
     func configureTimerSplash(){
         timerSplash = Timer.scheduledTimer(withTimeInterval: Constants.Splash.timerSplash, repeats: false) { _ in
-            let viewController = HomeViewController(viewDataSource: HomeViewDataSource(),
+            let viewController = HomeViewController(viewDataSource: HomeViewDataSource(), viewDelegate: HomeViewDelegate(),
                                                     presenter: HomePresenter(useCase: TunesUseCase(
                                                         repository: TunesApiRepository(
                                                             restApi: TunesNetworkRestApi()))))

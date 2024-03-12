@@ -11,8 +11,13 @@ extension HomeViewDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let view = view?.ListTunes?.results else { return UITableViewCell() }
-        let cell = UITableViewCell()
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TunesCell", for: indexPath) as? TunesCell
+        else {return UITableViewCell()}
+        
+        guard let song = view?.ListTunes?.results[indexPath.row] else { return UITableViewCell() }
+      
+        cell.setup(song: song)
         return cell
     }
 }

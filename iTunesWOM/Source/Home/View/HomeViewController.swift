@@ -6,12 +6,15 @@ class HomeViewController: UIViewController {
     var ListTunes: TunesModel?
     
     private var viewDataSource: HomeViewDataSource?
+    private var viewDelegate: HomeViewDelegate?
     private var presenter: HomePresenter?
     
-    convenience init(viewDataSource: HomeViewDataSource, presenter: HomePresenter) {
+    convenience init(viewDataSource: HomeViewDataSource, viewDelegate: HomeViewDelegate, presenter: HomePresenter) {
         self.init()
         self.viewDataSource = viewDataSource
         self.viewDataSource?.view = self
+        self.viewDelegate = viewDelegate
+        self.viewDelegate?.view = self
         self.presenter = presenter
         self.presenter?.view = self
     }
@@ -34,7 +37,10 @@ class HomeViewController: UIViewController {
     
     private func configureTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(TunesCell.self, forCellReuseIdentifier: "TunesCell")
         tableView.dataSource = viewDataSource
+        tableView.delegate = viewDelegate
+        tableView.separatorStyle = .none
         view.addSubview(tableView)
         
     }
@@ -62,4 +68,10 @@ extension HomeViewController: HomeViewProtocol {
         ListTunes = model
         self.tableView.reloadData()
     }
+    
+    func goToDetail(song: Result) {
+        let detailView = DetailViewController(song: song)
+        navigationController?.pushViewController(detailView, animated: true)
+    }
+    
 }

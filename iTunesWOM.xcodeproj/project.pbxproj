@@ -27,6 +27,10 @@
 		C6863CF42B9FCE9D009AFEBB /* TunesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CF32B9FCE9D009AFEBB /* TunesModel.swift */; };
 		C6863CF62B9FCF3C009AFEBB /* LoardingSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CF52B9FCF3C009AFEBB /* LoardingSpinnerView.swift */; };
 		C6863CF82B9FD84F009AFEBB /* ErrorAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CF72B9FD84F009AFEBB /* ErrorAlertView.swift */; };
+		C6863CFB2B9FDDFB009AFEBB /* TunesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CFA2B9FDDFB009AFEBB /* TunesCell.swift */; };
+		C6863CFE2B9FE318009AFEBB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C6863CFD2B9FE318009AFEBB /* Kingfisher */; };
+		C6863D012B9FE94C009AFEBB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863D002B9FE94C009AFEBB /* DetailViewController.swift */; };
+		C6863D032B9FEAE4009AFEBB /* HomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863D022B9FEAE4009AFEBB /* HomeViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,9 @@
 		C6863CF32B9FCE9D009AFEBB /* TunesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesModel.swift; sourceTree = "<group>"; };
 		C6863CF52B9FCF3C009AFEBB /* LoardingSpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoardingSpinnerView.swift; sourceTree = "<group>"; };
 		C6863CF72B9FD84F009AFEBB /* ErrorAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertView.swift; sourceTree = "<group>"; };
+		C6863CFA2B9FDDFB009AFEBB /* TunesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesCell.swift; sourceTree = "<group>"; };
+		C6863D002B9FE94C009AFEBB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C6863D022B9FEAE4009AFEBB /* HomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6863CFE2B9FE318009AFEBB /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +107,8 @@
 		C6863CD12B9F7F83009AFEBB /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C6863CD72B9F8AC2009AFEBB /* HomeViewController */,
+				C6863CFF2B9FE83A009AFEBB /* Detail */,
+				C6863CD72B9F8AC2009AFEBB /* Home */,
 				C6863CD22B9F7FEA009AFEBB /* Splash */,
 			);
 			path = Source;
@@ -113,14 +122,14 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		C6863CD72B9F8AC2009AFEBB /* HomeViewController */ = {
+		C6863CD72B9F8AC2009AFEBB /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				C6863CDD2B9F8BE7009AFEBB /* Data */,
 				C6863CDA2B9F8BA8009AFEBB /* Domain */,
 				C6863CD82B9F8B5A009AFEBB /* View */,
 			);
-			path = HomeViewController;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		C6863CD82B9F8B5A009AFEBB /* View */ = {
@@ -131,6 +140,7 @@
 				C6863CEF2B9FB6C7009AFEBB /* HomePresenter.swift */,
 				C6863CF12B9FB6DD009AFEBB /* HomePresenterProtocol.swift */,
 				C6863CE02B9F9C41009AFEBB /* HomeViewDataSource.swift */,
+				C6863D022B9FEAE4009AFEBB /* HomeViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +190,7 @@
 		C6863CE22B9FA58A009AFEBB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C6863CF92B9FDDE1009AFEBB /* Cells */,
 				C6863CD52B9F806F009AFEBB /* Constants.swift */,
 				C6863CF52B9FCF3C009AFEBB /* LoardingSpinnerView.swift */,
 				C6863CF72B9FD84F009AFEBB /* ErrorAlertView.swift */,
@@ -205,6 +216,22 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		C6863CF92B9FDDE1009AFEBB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C6863CFA2B9FDDFB009AFEBB /* TunesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C6863CFF2B9FE83A009AFEBB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C6863D002B9FE94C009AFEBB /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,6 +248,9 @@
 			dependencies = (
 			);
 			name = iTunesWOM;
+			packageProductDependencies = (
+				C6863CFD2B9FE318009AFEBB /* Kingfisher */,
+			);
 			productName = iTunesWOM;
 			productReference = C6863CBA2B9F7C3F009AFEBB /* iTunesWOM.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +279,9 @@
 				Base,
 			);
 			mainGroup = C6863CB12B9F7C3F009AFEBB;
+			packageReferences = (
+				C6863CFC2B9FE318009AFEBB /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = C6863CBB2B9F7C3F009AFEBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -286,9 +319,12 @@
 				C6863CC02B9F7C3F009AFEBB /* SceneDelegate.swift in Sources */,
 				C6863CE62B9FB149009AFEBB /* TunesNetworkRestApi.swift in Sources */,
 				C6863CE82B9FB2A1009AFEBB /* TunesRestApi.swift in Sources */,
+				C6863D012B9FE94C009AFEBB /* DetailViewController.swift in Sources */,
 				C6863CEA2B9FB4AD009AFEBB /* TunesRepository.swift in Sources */,
+				C6863D032B9FEAE4009AFEBB /* HomeViewDelegate.swift in Sources */,
 				C6863CF02B9FB6C7009AFEBB /* HomePresenter.swift in Sources */,
 				C6863CEE2B9FB606009AFEBB /* TunesUseCase.swift in Sources */,
+				C6863CFB2B9FDDFB009AFEBB /* TunesCell.swift in Sources */,
 				C6863CE12B9F9C41009AFEBB /* HomeViewDataSource.swift in Sources */,
 				C6863CD42B9F8057009AFEBB /* SplashViewController.swift in Sources */,
 				C6863CF62B9FCF3C009AFEBB /* LoardingSpinnerView.swift in Sources */,
@@ -513,6 +549,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C6863CFC2B9FE318009AFEBB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C6863CFD2B9FE318009AFEBB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6863CFC2B9FE318009AFEBB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C6863CB22B9F7C3F009AFEBB /* Project object */;
 }
