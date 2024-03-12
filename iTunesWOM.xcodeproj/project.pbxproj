@@ -14,7 +14,23 @@
 		C6863CC72B9F7C41009AFEBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6863CC62B9F7C41009AFEBB /* Assets.xcassets */; };
 		C6863CCA2B9F7C41009AFEBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6863CC82B9F7C41009AFEBB /* LaunchScreen.storyboard */; };
 		C6863CD42B9F8057009AFEBB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CD32B9F8057009AFEBB /* SplashViewController.swift */; };
-		C6863CD62B9F806F009AFEBB /* SplashViewControllerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CD52B9F806F009AFEBB /* SplashViewControllerConstants.swift */; };
+		C6863CD62B9F806F009AFEBB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CD52B9F806F009AFEBB /* Constants.swift */; };
+		C6863CDF2B9F9BF6009AFEBB /* HomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CDE2B9F9BF6009AFEBB /* HomeViewProtocol.swift */; };
+		C6863CE12B9F9C41009AFEBB /* HomeViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CE02B9F9C41009AFEBB /* HomeViewDataSource.swift */; };
+		C6863CE62B9FB149009AFEBB /* TunesNetworkRestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CE52B9FB149009AFEBB /* TunesNetworkRestApi.swift */; };
+		C6863CE82B9FB2A1009AFEBB /* TunesRestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CE72B9FB2A1009AFEBB /* TunesRestApi.swift */; };
+		C6863CEA2B9FB4AD009AFEBB /* TunesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CE92B9FB4AD009AFEBB /* TunesRepository.swift */; };
+		C6863CEC2B9FB4D1009AFEBB /* TunesApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CEB2B9FB4D1009AFEBB /* TunesApiRepository.swift */; };
+		C6863CEE2B9FB606009AFEBB /* TunesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CED2B9FB606009AFEBB /* TunesUseCase.swift */; };
+		C6863CF02B9FB6C7009AFEBB /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CEF2B9FB6C7009AFEBB /* HomePresenter.swift */; };
+		C6863CF22B9FB6DD009AFEBB /* HomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CF12B9FB6DD009AFEBB /* HomePresenterProtocol.swift */; };
+		C6863CF42B9FCE9D009AFEBB /* TunesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CF32B9FCE9D009AFEBB /* TunesModel.swift */; };
+		C6863CF62B9FCF3C009AFEBB /* LoardingSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CF52B9FCF3C009AFEBB /* LoardingSpinnerView.swift */; };
+		C6863CF82B9FD84F009AFEBB /* ErrorAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CF72B9FD84F009AFEBB /* ErrorAlertView.swift */; };
+		C6863CFB2B9FDDFB009AFEBB /* TunesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863CFA2B9FDDFB009AFEBB /* TunesCell.swift */; };
+		C6863CFE2B9FE318009AFEBB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C6863CFD2B9FE318009AFEBB /* Kingfisher */; };
+		C6863D012B9FE94C009AFEBB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863D002B9FE94C009AFEBB /* DetailViewController.swift */; };
+		C6863D032B9FEAE4009AFEBB /* HomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6863D022B9FEAE4009AFEBB /* HomeViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +43,22 @@
 		C6863CC92B9F7C41009AFEBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6863CCB2B9F7C41009AFEBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6863CD32B9F8057009AFEBB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		C6863CD52B9F806F009AFEBB /* SplashViewControllerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerConstants.swift; sourceTree = "<group>"; };
+		C6863CD52B9F806F009AFEBB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C6863CDE2B9F9BF6009AFEBB /* HomeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProtocol.swift; sourceTree = "<group>"; };
+		C6863CE02B9F9C41009AFEBB /* HomeViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDataSource.swift; sourceTree = "<group>"; };
+		C6863CE52B9FB149009AFEBB /* TunesNetworkRestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesNetworkRestApi.swift; sourceTree = "<group>"; };
+		C6863CE72B9FB2A1009AFEBB /* TunesRestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesRestApi.swift; sourceTree = "<group>"; };
+		C6863CE92B9FB4AD009AFEBB /* TunesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesRepository.swift; sourceTree = "<group>"; };
+		C6863CEB2B9FB4D1009AFEBB /* TunesApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesApiRepository.swift; sourceTree = "<group>"; };
+		C6863CED2B9FB606009AFEBB /* TunesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesUseCase.swift; sourceTree = "<group>"; };
+		C6863CEF2B9FB6C7009AFEBB /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		C6863CF12B9FB6DD009AFEBB /* HomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterProtocol.swift; sourceTree = "<group>"; };
+		C6863CF32B9FCE9D009AFEBB /* TunesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesModel.swift; sourceTree = "<group>"; };
+		C6863CF52B9FCF3C009AFEBB /* LoardingSpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoardingSpinnerView.swift; sourceTree = "<group>"; };
+		C6863CF72B9FD84F009AFEBB /* ErrorAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertView.swift; sourceTree = "<group>"; };
+		C6863CFA2B9FDDFB009AFEBB /* TunesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesCell.swift; sourceTree = "<group>"; };
+		C6863D002B9FE94C009AFEBB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C6863D022B9FEAE4009AFEBB /* HomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6863CFE2B9FE318009AFEBB /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +92,7 @@
 		C6863CBC2B9F7C3F009AFEBB /* iTunesWOM */ = {
 			isa = PBXGroup;
 			children = (
+				C6863CE22B9FA58A009AFEBB /* Resources */,
 				C6863CD12B9F7F83009AFEBB /* Source */,
 				C6863CBD2B9F7C3F009AFEBB /* AppDelegate.swift */,
 				C6863CBF2B9F7C3F009AFEBB /* SceneDelegate.swift */,
@@ -74,7 +107,8 @@
 		C6863CD12B9F7F83009AFEBB /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C6863CD72B9F8AC2009AFEBB /* HomeViewController */,
+				C6863CFF2B9FE83A009AFEBB /* Detail */,
+				C6863CD72B9F8AC2009AFEBB /* Home */,
 				C6863CD22B9F7FEA009AFEBB /* Splash */,
 			);
 			path = Source;
@@ -88,20 +122,25 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		C6863CD72B9F8AC2009AFEBB /* HomeViewController */ = {
+		C6863CD72B9F8AC2009AFEBB /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				C6863CDD2B9F8BE7009AFEBB /* Data */,
 				C6863CDA2B9F8BA8009AFEBB /* Domain */,
 				C6863CD82B9F8B5A009AFEBB /* View */,
 			);
-			path = HomeViewController;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		C6863CD82B9F8B5A009AFEBB /* View */ = {
 			isa = PBXGroup;
 			children = (
 				C6863CC12B9F7C3F009AFEBB /* HomeViewController.swift */,
+				C6863CDE2B9F9BF6009AFEBB /* HomeViewProtocol.swift */,
+				C6863CEF2B9FB6C7009AFEBB /* HomePresenter.swift */,
+				C6863CF12B9FB6DD009AFEBB /* HomePresenterProtocol.swift */,
+				C6863CE02B9F9C41009AFEBB /* HomeViewDataSource.swift */,
+				C6863D022B9FEAE4009AFEBB /* HomeViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -110,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				C6863CD32B9F8057009AFEBB /* SplashViewController.swift */,
-				C6863CD52B9F806F009AFEBB /* SplashViewControllerConstants.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +165,7 @@
 		C6863CDB2B9F8BBA009AFEBB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C6863CF32B9FCE9D009AFEBB /* TunesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,6 +173,7 @@
 		C6863CDC2B9F8BC5009AFEBB /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				C6863CED2B9FB606009AFEBB /* TunesUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -141,8 +181,55 @@
 		C6863CDD2B9F8BE7009AFEBB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C6863CE42B9FB01B009AFEBB /* Repository */,
+				C6863CE32B9FB011009AFEBB /* Network */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		C6863CE22B9FA58A009AFEBB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C6863CF92B9FDDE1009AFEBB /* Cells */,
+				C6863CD52B9F806F009AFEBB /* Constants.swift */,
+				C6863CF52B9FCF3C009AFEBB /* LoardingSpinnerView.swift */,
+				C6863CF72B9FD84F009AFEBB /* ErrorAlertView.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C6863CE32B9FB011009AFEBB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C6863CE52B9FB149009AFEBB /* TunesNetworkRestApi.swift */,
+				C6863CE72B9FB2A1009AFEBB /* TunesRestApi.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C6863CE42B9FB01B009AFEBB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				C6863CE92B9FB4AD009AFEBB /* TunesRepository.swift */,
+				C6863CEB2B9FB4D1009AFEBB /* TunesApiRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		C6863CF92B9FDDE1009AFEBB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C6863CFA2B9FDDFB009AFEBB /* TunesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C6863CFF2B9FE83A009AFEBB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C6863D002B9FE94C009AFEBB /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +248,9 @@
 			dependencies = (
 			);
 			name = iTunesWOM;
+			packageProductDependencies = (
+				C6863CFD2B9FE318009AFEBB /* Kingfisher */,
+			);
 			productName = iTunesWOM;
 			productReference = C6863CBA2B9F7C3F009AFEBB /* iTunesWOM.app */;
 			productType = "com.apple.product-type.application";
@@ -189,6 +279,9 @@
 				Base,
 			);
 			mainGroup = C6863CB12B9F7C3F009AFEBB;
+			packageReferences = (
+				C6863CFC2B9FE318009AFEBB /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = C6863CBB2B9F7C3F009AFEBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -216,11 +309,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6863CD62B9F806F009AFEBB /* SplashViewControllerConstants.swift in Sources */,
+				C6863CD62B9F806F009AFEBB /* Constants.swift in Sources */,
+				C6863CF82B9FD84F009AFEBB /* ErrorAlertView.swift in Sources */,
+				C6863CF22B9FB6DD009AFEBB /* HomePresenterProtocol.swift in Sources */,
+				C6863CEC2B9FB4D1009AFEBB /* TunesApiRepository.swift in Sources */,
+				C6863CDF2B9F9BF6009AFEBB /* HomeViewProtocol.swift in Sources */,
 				C6863CC22B9F7C3F009AFEBB /* HomeViewController.swift in Sources */,
 				C6863CBE2B9F7C3F009AFEBB /* AppDelegate.swift in Sources */,
 				C6863CC02B9F7C3F009AFEBB /* SceneDelegate.swift in Sources */,
+				C6863CE62B9FB149009AFEBB /* TunesNetworkRestApi.swift in Sources */,
+				C6863CE82B9FB2A1009AFEBB /* TunesRestApi.swift in Sources */,
+				C6863D012B9FE94C009AFEBB /* DetailViewController.swift in Sources */,
+				C6863CEA2B9FB4AD009AFEBB /* TunesRepository.swift in Sources */,
+				C6863D032B9FEAE4009AFEBB /* HomeViewDelegate.swift in Sources */,
+				C6863CF02B9FB6C7009AFEBB /* HomePresenter.swift in Sources */,
+				C6863CEE2B9FB606009AFEBB /* TunesUseCase.swift in Sources */,
+				C6863CFB2B9FDDFB009AFEBB /* TunesCell.swift in Sources */,
+				C6863CE12B9F9C41009AFEBB /* HomeViewDataSource.swift in Sources */,
 				C6863CD42B9F8057009AFEBB /* SplashViewController.swift in Sources */,
+				C6863CF62B9FCF3C009AFEBB /* LoardingSpinnerView.swift in Sources */,
+				C6863CF42B9FCE9D009AFEBB /* TunesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +480,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iTunesWOM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -399,6 +508,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iTunesWOM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -441,6 +551,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C6863CFC2B9FE318009AFEBB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C6863CFD2B9FE318009AFEBB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6863CFC2B9FE318009AFEBB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C6863CB22B9F7C3F009AFEBB /* Project object */;
 }
