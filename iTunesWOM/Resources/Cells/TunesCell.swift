@@ -1,11 +1,26 @@
 import UIKit
 import Kingfisher
 
+protocol TunesCellDelegate: AnyObject {
+    func didTapFavoriteButton(_ cell: TunesCell)
+}
+
 class TunesCell: UITableViewCell {
     private let containerView = UIView()
     private let trackNameLabel = UILabel()
     private let artistNameLabel = UILabel()
     private let albumImageView = UIImageView()
+    private let favoriteButton = UIButton(type: .system)
+
+    weak var delegate: TunesCellDelegate?
+
+    var isFavorite: Bool = false {
+        didSet {
+            updateFavoriteButtonImage()
+        }
+    }
+
+    var trackId: Int = 0
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -13,11 +28,26 @@ class TunesCell: UITableViewCell {
     }
 
     func setup(song: Result) {
+        trackId = song.trackID
         trackNameLabel.text = song.trackName
         artistNameLabel.text = song.artistName
         if let url = URL(string: song.artworkUrl100) {
             albumImageView.kf.setImage(with: url)
         }
+        isFavorite = UserDefaults.standard.bool(forKey: "\(trackId)")
+        updateFavoriteButtonImage()
+    }
+
+    @objc private func favoriteButtonTapped() {
+        isFavorite.toggle()
+        updateFavoriteButtonImage()
+        delegate?.didTapFavoriteButton(self)
+        UserDefaults.standard.set(isFavorite, forKey: "\(trackId)")
+    }
+
+    private func updateFavoriteButtonImage() {
+        let imageName = isFavorite ? "heart.fill" : "heart"
+        favoriteButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
 
     private func prepare() {
@@ -25,6 +55,7 @@ class TunesCell: UITableViewCell {
         configureTrackNameLabel()
         configureArtistNameLabel()
         configureAlbumImageView()
+        configureFavoriteButton()
         configureLayout()
     }
 
@@ -58,6 +89,13 @@ class TunesCell: UITableViewCell {
         containerView.addSubview(albumImageView)
     }
 
+    private func configureFavoriteButton() {
+        favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        favoriteButton.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(favoriteButton)
+    }
+
     private func configureLayout() {
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
@@ -77,7 +115,10 @@ class TunesCell: UITableViewCell {
             albumImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
             albumImageView.widthAnchor.constraint(equalToConstant: 60),
             albumImageView.heightAnchor.constraint(equalToConstant: 60),
-            albumImageView.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor, constant: -10)
+            albumImageView.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor, constant: -10),
+
+            favoriteButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
+            favoriteButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10)
         ])
     }
 

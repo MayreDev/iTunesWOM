@@ -1,6 +1,6 @@
 import UIKit
 
-class Constants{
+class Constants {
     enum Splash {
         static let image = "SplashITunes"
         static let timerSplash = 5.0

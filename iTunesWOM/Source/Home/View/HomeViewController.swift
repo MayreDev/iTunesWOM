@@ -1,9 +1,10 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
+    var segmentedControl = UISegmentedControl()
     private var tableView = UITableView()
     var ListTunes: TunesModel?
+    var favoriteTunes: [Result] = []
     
     private var viewDataSource: HomeViewDataSource?
     private var viewDelegate: HomeViewDelegate?
@@ -25,6 +26,7 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .white
         self.navigationItem.setHidesBackButton(true, animated: false)
         getListTunes()
+        configureSegmentedControl()
         configureTableView()
         configureLayout()
     }
@@ -35,6 +37,31 @@ class HomeViewController: UIViewController {
         }
     }
     
+    private func configureSegmentedControl() {
+        segmentedControl = UISegmentedControl(items: ["Todos", "Favoritos"])
+        segmentedControl.selectedSegmentTintColor = .clear
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.subviews.forEach { subview in
+            subview.backgroundColor = .systemGray6
+        }
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(hideTableAndShowCollection), for: .valueChanged)
+        view.addSubview(segmentedControl)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)], for: .selected)
+    }
+    
+    @objc func hideTableAndShowCollection() {
+        updatefavorites()
+        tableView.reloadData()
+    }
+    
+    func updatefavorites(){
+        guard let list = ListTunes?.results else { return }
+        let favorites = UserDefaults.standard.array(forKey: "favoriteTrackIDs") as? [Int]
+        let favoriteTrackIDs = list.filter{ favorites?.contains($0.trackID) == true}
+        favoriteTunes.removeAll()
+        favoriteTunes = favoriteTrackIDs
+    }
     private func configureTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(TunesCell.self, forCellReuseIdentifier: "TunesCell")
@@ -42,12 +69,16 @@ class HomeViewController: UIViewController {
         tableView.delegate = viewDelegate
         tableView.separatorStyle = .none
         view.addSubview(tableView)
-        
     }
     
     private func configureLayout() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            segmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            segmentedControl.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 10),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -56,6 +87,43 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewProtocol {
+    
+    func didTapFavoriteButton(_ cell: TunesCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+        
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            let song = ListTunes?.results[indexPath.row]
+            toggleFavoriteStatus(for: song)
+        case 1:
+            let song = favoriteTunes[indexPath.row]
+            toggleFavoriteStatus(for: song)
+        default:
+            break
+        }
+    }
+    
+    private func toggleFavoriteStatus(for song: Result?) {
+        guard let song = song else { return }
+        
+        let isFavorite = UserDefaults.standard.bool(forKey: "\(song.trackID)")
+        
+        if isFavorite {
+            favoriteTunes.removeAll { $0.trackID == song.trackID }
+        } else {
+            favoriteTunes.append(song)
+        }
+        
+        let favoriteTrackIDs = favoriteTunes.map { $0.trackID }
+        UserDefaults.standard.set(favoriteTrackIDs, forKey: "favoriteTrackIDs")
+        tableView.reloadData()
+        if let favoriteTrackIDs = UserDefaults.standard.array(forKey: "favoriteTrackIDs") as? [Int] {
+            favoriteTunes = ListTunes?.results.filter { favoriteTrackIDs.contains($0.trackID) } ?? []
+        }
+    }
+    
     func closeAppAction() {
         UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
     }
