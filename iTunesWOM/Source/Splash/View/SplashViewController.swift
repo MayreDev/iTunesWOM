@@ -1,4 +1,3 @@
-
 import UIKit
 
 class SplashViewController: UIViewController {
@@ -16,13 +15,16 @@ class SplashViewController: UIViewController {
     func configureImages(){
         logoImage.translatesAutoresizingMaskIntoConstraints = false
         logoImage.contentMode = .scaleAspectFill
-        logoImage.image = UIImage(named: SplashViewControllerConstants.Logo.image)
+        logoImage.image = UIImage(named: Constants.Splash.image)
         view.addSubview(logoImage)
     }
-
+    
     func configureTimerSplash(){
-        timerSplash = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { _ in
-            let viewController = HomeViewController()
+        timerSplash = Timer.scheduledTimer(withTimeInterval: Constants.Splash.timerSplash, repeats: false) { _ in
+            let viewController = HomeViewController(viewDataSource: HomeViewDataSource(),
+                                                    presenter: HomePresenter(useCase: TunesUseCase(
+                                                        repository: TunesApiRepository(
+                                                            restApi: TunesNetworkRestApi()))))
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
